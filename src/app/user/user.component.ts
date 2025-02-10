@@ -1,4 +1,4 @@
-import {Component, input, output} from '@angular/core'
+import {Component, computed, input, output} from '@angular/core'
 
 @Component({
   selector: 'app-user',
@@ -13,9 +13,7 @@ export class UserComponent {
   name = input.required<string>()
   select = output<string>()
 
-  get imagePath() {
-    return `assets/users/${this.avatar()}`
-  }
+  imagePath = computed(() => `assets/users/${this.avatar()}`)
 
   // emitting the id of the user
   onSelectUser() {
