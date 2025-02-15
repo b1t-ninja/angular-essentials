@@ -1,4 +1,5 @@
 import {Component, computed, input, output} from '@angular/core'
+import {User} from "./user.model";
 
 @Component({
   selector: 'app-user',
@@ -17,10 +18,4 @@ export class UserComponent {
   onSelectUser() {
     this.select.emit(this.user().id)
   }
-}
-
-export interface User {
-  id: string
-  avatar: string
-  name: string
 }
